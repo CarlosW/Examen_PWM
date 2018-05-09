@@ -1,0 +1,12 @@
+module Generador_PWM
+#(
+
+)
+(
+	input clk,
+	input reset,
+	input freq,
+	input dutyCycle,
+	
+	output PWM_Gen
+);
