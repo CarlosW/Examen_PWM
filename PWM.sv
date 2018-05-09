@@ -65,31 +65,31 @@ Shifter
 	
 );
 
-//Divisor_Freq
-//Divisor_Frecuencia
-//(
-//	.clk(clk),
-//	.reset(reset),
-//	.enable(start),
-//	.internalClock(25000000),
-//	.freq(10000),
-//	
-//	.counting(freq_to_PWM)
-//	
-//);
-//
-//Divisor_Freq
-//Frecuencia_PWM
-//(
-//	.clk(clk),
-//	.reset(reset),
-//	.enable(freq_to_PWM),
-//	.internalClock(10000),
-//	.freq(frequency_shifted),
-//	
-//	.counting(PWM_to_Gen)
-//	
-//);
+Divisor_Freq
+Divisor_Frecuencia
+(
+	.clk(clk),
+	.reset(reset),
+	.enable(start),
+	.internalClock(25000000),
+	.freq(10000),
+	
+	.counting(freq_to_PWM)
+	
+);
+
+Divisor_Freq
+Frecuencia_PWM
+(
+	.clk(clk),
+	.reset(reset),
+	.enable(freq_to_PWM),
+	.internalClock(10000),
+	.freq(frequency_shifted),
+	
+	.counting(PWM_to_Gen)
+	
+);
 
 Generador_PWM
 Generador_PWM
@@ -98,6 +98,7 @@ Generador_PWM
 	.reset(reset),
 	.freq(frequency_shifted),
 	.dutyCycle(dutyCycle_wire),
+	.enable(PWM_to_Gen),
 	
 	.PWM_Gen(pwm_output)
 );
